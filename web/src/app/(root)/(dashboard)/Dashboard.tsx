@@ -17,13 +17,13 @@ import Loader from "@/components/shared/Loader";
 
 // Array of job portal names
 const jobPortals = [
+  "ycombinator",
+  "linkedin",
   "simplyhired",
   "indeed",
   "foundit",
-  "linkedin",
   "naukri",
   "internshala",
-  "ycombinator",
   "upwork",
   "freelancer",
   "glassdoor"
