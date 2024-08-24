@@ -21,10 +21,10 @@ const jobPortals = [
   "linkedin",
   "simplyhired",
   "indeed",
-  "foundit",
   "naukri",
   "internshala",
   "upwork",
+  "foundit",
   "freelancer",
   "glassdoor"
 ];
