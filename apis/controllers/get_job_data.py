@@ -1,4 +1,4 @@
-from db import get_collection
+from db.db import get_collection
 from pymongo import DESCENDING
 
 collection = get_collection('jobs')

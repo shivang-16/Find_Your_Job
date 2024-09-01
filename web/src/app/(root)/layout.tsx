@@ -18,7 +18,7 @@ export default async function MainLayout({
 
   return (
     <>
-        <div className="w-[1200px] m-auto">
+        <div className="flex flex-wrap items-center justify-center">
           {children}
         </div>
     

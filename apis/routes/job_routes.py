@@ -1,24 +1,11 @@
-from flask import Flask, jsonify, request
-from flask_cors import CORS
+from flask import Blueprint, jsonify, request
 from controllers.get_job_data import get_jobs
-from controllers.scrape_job_data import scrapejobsdata
+from middleware.check_auth import check_auth
 
-app = Flask(__name__)
-CORS(app)
+# Create a Blueprint for job-related routes
+job_blueprint = Blueprint('job', __name__)
 
-
-@app.route('/')
-def test():
-    return "Server is working"
-
-
-@app.route('/api/scrape', methods=['GET'])
-def scrape_jobs():
-    job_data = scrapejobsdata()
-    return jsonify(job_data)
-
-
-@app.route('/api/jobs/get', methods=['GET'])
+@job_blueprint.route('/api/jobs/get', methods=['GET'])
 def fetch_jobs():
     # Get the 'page' parameter from the query string, defaulting to 1 if not provided
     page = int(request.args.get('page', 1))
@@ -35,7 +22,3 @@ def fetch_jobs():
         return jsonify(jobs)
     else:
         return jsonify({"error": "Error fetching jobs"}), 500
-
-
-if __name__ == '__main__':
-    app.run(debug=True)

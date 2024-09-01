@@ -62,7 +62,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 text-center">
       {loading && (
         <div className="flex justify-center items-center h-32">
           <Loader />
@@ -97,11 +97,11 @@ export default function Dashboard() {
           />
         </div>
 
-        <div>
-          <TabsContent value="">
+   
+          <TabsContent value="" >
             {jobs.length > 0 ? (
               jobs.map((job: any) => (
-                <Card key={job._id}>
+                <Card key={job._id} className="inline-block m-3 p-3 w-[400px]">
                   <CardHeader>
                     <CardTitle>{job.title || "No Title Available"}</CardTitle>
                     <CardDescription>
@@ -157,7 +157,6 @@ export default function Dashboard() {
               )}
             </TabsContent>
           ))}
-        </div>
       </Tabs>
 
       <div className="mt-4 text-center">
