@@ -1,6 +1,5 @@
 .env
 *.venv
 *.html
-*.txt
 *.idea
 *__pycache__/
